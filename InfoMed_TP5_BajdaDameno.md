@@ -55,6 +55,8 @@ SELECT nombre, matricula
 FROM MEDICOS
 WHERE especialidad_id = 4
 ```
+<img width="242" alt="image" src="https://github.com/user-attachments/assets/7b4f8864-bb5e-4c74-9c02-aac1d92ce2a1" />
+
 
 ### 2.5
 ```
@@ -115,6 +117,8 @@ SELECT nombre, ciudad, calle, numero
 FROM PACIENTES
 WHERE ciudad_id = 1
 ```
+<img width="411" alt="image" src="https://github.com/user-attachments/assets/dab7e194-1de2-48d0-b0be-efec8795c121" />
+
 
 ### 2.7
 ```
@@ -129,6 +133,8 @@ BEGIN
     END LOOP;
 END $$;
 ```
+<img width="292" alt="image" src="https://github.com/user-attachments/assets/7e73edaa-3aca-45d2-bf2f-0efdc1d63913" />
+
 
 ### 2.8
 ```
@@ -146,6 +152,8 @@ BEGIN
     END LOOP;
 END $$;`
 ```
+<img width="362" alt="image" src="https://github.com/user-attachments/assets/82f23a5c-239e-43cf-86f1-eda432ff9a1d" />
+
 
 ### 2.9
 ```
@@ -160,6 +168,8 @@ BEGIN
     END LOOP;
 END $$;
 ```
+<img width="394" alt="image" src="https://github.com/user-attachments/assets/c92cd468-25fe-4234-88ac-05c276eaabf7" />
+
 
 ### 2.10
 ```
@@ -177,6 +187,8 @@ BEGIN
     
 END $$;
 ```
+<img width="427" alt="image" src="https://github.com/user-attachments/assets/1a5cb533-b4ed-4023-92d5-72c96b21ae71" />
+
 
 ### 2.11
 ```
@@ -188,6 +200,10 @@ FROM Pacientes p
 JOIN Consultas c ON p.id_paciente = c.id_paciente
 WHERE c.fecha >= '2024-08-01' AND c.fecha < '2024-09-01';
 ```
+En la imagen se muestran solo 10 de todos los registros que corresponden a la query
+
+![WhatsApp Image 2025-05-26 at 19 54 01_7038e32e](https://github.com/user-attachments/assets/c61ce791-c16e-4c7b-b770-a56d87381308)
+
 
 ### 2.12
 ```
@@ -206,6 +222,8 @@ WHERE r.id_medico = 2
 GROUP BY m.nombre
 HAVING COUNT(*) > 1;
 ```
+![WhatsApp Image 2025-05-26 at 19 54 23_e2e93b8f](https://github.com/user-attachments/assets/5a7bcb50-ec7e-4854-937f-f238ec1bc71f)
+
 
 ### 2.13
 ```
@@ -228,6 +246,10 @@ LEFT JOIN Recetas r ON p.id_paciente = r.id_paciente
 GROUP BY p.id_paciente, p.nombre
 ORDER BY cantidad_recetas DESC;
 ```
+En la imagen se muestran solo 10 de los registros y particularmente los pacientes que no recibieron recetas, que es el resultado de haber usado LEFT JOIN
+
+![WhatsApp Image 2025-05-26 at 19 56 13_eb3f075b](https://github.com/user-attachments/assets/b48486a9-705f-4f7c-b747-e7fe11e05210)
+
 
 ### 2.14
 ```
@@ -240,6 +262,7 @@ GROUP BY m.id_medicamento, m.nombre
 ORDER BY cantidad_recetas DESC
 LIMIT 1;
 ```
+![WhatsApp Image 2025-05-26 at 19 56 46_b6406f63](https://github.com/user-attachments/assets/452ccdc9-7fe1-45dc-b4c6-5124f3d456fb)
 
 
 ### 2.15
@@ -278,6 +301,10 @@ LEFT JOIN (
 ) c ON p.id_paciente = c.id_paciente
 ORDER BY p.nombre;
 ```
+En la imagen se muestran solo 10 de los registros y particualrmente mostramos que se incluyen los pacientes que no hicieron consultas, dando NULL en ultima_consulta y disgnostico, también resultado de usar el LEFT JOIN
+
+![WhatsApp Image 2025-05-26 at 19 58 36_bc1053ec](https://github.com/user-attachments/assets/d225926a-6fd3-4b3a-963e-1995a0c4b8b9)
+
 
 ### 2.16
 ```
@@ -295,6 +322,10 @@ JOIN Pacientes p ON c.id_paciente = p.id_paciente
 GROUP BY m.nombre, p.nombre
 ORDER BY m.nombre, p.nombre;
 ```
+En la imagen se muestran solo 10 de todos los registros que corresponden a la query
+
+![WhatsApp Image 2025-05-26 at 20 00 12_c2632ec2](https://github.com/user-attachments/assets/afaa8bbc-d94d-4ac5-90bc-3bc687d10331)
+
 
 ### 2.17
 ```
@@ -339,6 +370,9 @@ GROUP BY
 ORDER BY 
     total_recetas DESC;
 ```
+![WhatsApp Image 2025-05-26 at 20 04 11_ddfe8358](https://github.com/user-attachments/assets/662935c8-6267-4a10-a8a0-dadf27491cc9)
+
+
     
 ### 2.18
 ```
@@ -371,6 +405,8 @@ GROUP BY
 ORDER BY 
     total_pacientes DESC;
 ```
+Se muestran todos los registros que cumplen con la query, y se incluyen los médicos que no realizaron consultas, también resultado del LEFT JOIN
 
+![WhatsApp Image 2025-05-26 at 20 02 05_e2e0c31e](https://github.com/user-attachments/assets/e9e1f2a3-b524-404e-a928-4663f3ad1dad)
 
 
